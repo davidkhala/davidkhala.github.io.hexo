@@ -3,19 +3,25 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: DLCluster
+title: 狼哥分享站
 subtitle:
 description:
 author: davidLiu
-language:
+language: zh-Hans
 timezone:
-
+avatar: https://avatars0.githubusercontent.com/u/7227589?v=3&s=460
+since: 2016
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+
+social:
+  GitHub: https://github.com/davidkhala
+  Twitter: https://twitter.com/davidkhala
+  Weibo: http://weibo.com/davidkhala
 
 # Directory
 source_dir: source
@@ -63,7 +69,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: cactus-dark
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

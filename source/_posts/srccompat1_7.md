@@ -1,7 +1,7 @@
 ---
 title: 安卓sourceCompatibility = '1.7'系列解决思路
 date: 2017-04-02 21:45:05
-tags: ‘android’
+tags:
 ---
 问题描述：
 windows平台 android studio 2.3
@@ -15,15 +15,19 @@ targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
 to that submodule's build.gradle file.
 ```
+<!--more-->
 
-查明原因：
+查明原因
 =================
 由于我将其它同事基于jdk8编写的源代码作为模块添加进我的项目里，而在他的模块中有类似语句
 ![](http://i2.muimg.com/4851/752f799d38855519.png)
 这里虽然warning level是Error的，但是依然能够编译。  
 在与同事协商后，打算这段代码保留不动，动我前端的配置。  
-方案一  
---------------
+解决方案  
+=================
+sourceCompatibility = '1.7'
+-----------------
+
 假设我项目里包含了这段代码的模块名叫module_A，则在module_A对应的build.gradle里面添加
 ```
 targetCompatibility = '1.7'
@@ -34,8 +38,8 @@ sourceCompatibility = '1.7'
 类似的[解决方案](http://www.cnblogs.com/helloshrek/p/6018547.html)
 这个方案我准备用LocalDate测试一下
 
-方案二：一个耗时的方法
-------------
+jackOption
+---------------
 
 在安卓中使用一些java 8特性的办法就是在你的 app模块里加入
 ```
@@ -45,7 +49,7 @@ defaultConfig{...
 }}
 ```
 
-缺点
+jackOption方法的缺点
 ------------
 可看看这个
 ![](http://i4.buimg.com/4851/e76bd5c07b0da1fd.png)
