@@ -2,6 +2,11 @@
 title: 安卓sourceCompatibility = '1.7'系列解决思路
 date: 2017-04-02 21:45:05
 tags:
+- 排雷
+- Android
+- ASTRI
+categories:
+- Android
 ---
 问题描述：
 windows平台 android studio 2.3
