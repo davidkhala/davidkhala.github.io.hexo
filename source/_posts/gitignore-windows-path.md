@@ -20,15 +20,17 @@ tags:
 # 用git-bash 设置global gitignore
 创建了.gitignore_global文件之后（名字随意的）
 
-```$ git config --global core.excludesfile C:\Users\david_my_name\.gitignore_global```
+`$ git config --global core.excludesfile C:\Users\david_my_name\.gitignore_global`
 
 接下来没有提示信息出现
 于是我回到smart git那边看了下，发现那些/.idea/目录下的文件依然在unstaged里。
 
 我又回到了git-bash运行  
-```$ git config --global core.excludesfile```
+`$ git config --global core.excludesfile`
+
 结果出现了
-  ```  C:Usersdavid_my_name.gitignore_global```
+
+  `C:Usersdavid_my_name.gitignore_global`
 
 这就很尴尬了
 # 结论：即使在windows平台下设置global ignore文件时，路径依然使用'/'而非'\\'
