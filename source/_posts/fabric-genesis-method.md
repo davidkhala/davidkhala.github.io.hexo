@@ -36,6 +36,7 @@ provisional模式需要配合另一个环境参数`ORDERER_GENERAL_GENESISPROFIL
 如下是所有的集合元素
 - SampleInsecureSolo
 - SampleNoConsortium
+	- **警告**  这个模式下orderer容器会无法启动，出现错误：```panic: No system chain found. If bootstrapping, does your system channel contain a consortiums group definition``` 
 - SampleInsecureKafka
 - SampleDevModeSolo
 - SampleSingleMSPSolo
@@ -51,6 +52,7 @@ provisional模式需要配合另一个环境参数`ORDERER_GENERAL_GENESISPROFIL
 若不指定，`ORDERER_GENERAL_GENESISFILE`的系统默认值是
 `/etc/hyperledger/fabric/genesisblock`  
 而本地的block文件可以通过docker volumes挂载的办法同步到ORDERER_GENERAL_GENESISFILE所指定的位置，具体做法见仁见智
+_因此如果不指定ORDERER_GENERAL_GENESISFILE又没有将block文件放到默认路径，orderer将由于找不到文件而无法启动_
 
 
 

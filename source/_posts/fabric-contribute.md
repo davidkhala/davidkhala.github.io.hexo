@@ -31,7 +31,7 @@ tags:
     *lf-sandbox项目不是 fabric项目，而是官方推荐拿来学习 gerrit用的沙盒项目*
 
 3. 点选左上方的`Clone with commit-msg hook`按钮  
-    *错误示例：如果没有登陆你的LFID，你将看不到 `Clone with commit-msg hook`按钮，只能看到 anonymous http 命令`git clone https://gerrit.hyperledger.org/r/lf-sandbox`*
+    *错误示例：如果没有登陆你的 LFID，你将看不到 `Clone with commit-msg hook`按钮，只能看到 anonymous http 命令`git clone https://gerrit.hyperledger.org/r/lf-sandbox`*
     *匿名clone下来的项目在后面提交时会出现commit hook缺失的错误*
 4. 在按钮同一栏的右边，选择验证方式 ssh|http，并复制其下方的clone命令
     - ssh验证：需要先生成本机的ssh pubkey文件，并在https://gerrit.hyperledger.org/的个人设置中将pubkey的内容加入列表中，才可以使用  
@@ -43,21 +43,28 @@ tags:
     git clone https://<LFID>@gerrit.hyperledger.org/r/a/lf-sandbox && (cd lf-sandbox && curl -kLo `git rev-parse --git-dir`/hooks/commit-msg https://<LFID>@gerrit.hyperledger.org/r/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
     ```
 5. 选择一个父目录，执行刚才复制的clone命令，下载代码
-6. 创建一个branch，名字格式为 FAB-XXXX （issue序号）  
+6. **更新** 初始化gerrit：`$ git review --setup`  
+ \--setup，代表只初始化仓库但不提交 _Just run the repo setup commands but don't submit anything_  
+  初始化时的工作包括（参见https://www.mediawiki.org/wiki/Gerrit/git-review#Setting_up_git-review）
+ - 测试远端仓库连通性，若失败，会要求输入一个gerrit用户名，输入LFID即可
+ - 创建一个名为“gerrit”的远端并引向它 
+    - _对于lf-sandbox项目，由于的确没有.gitreview文件，因此一定会出现_
+  > No '.gitreview' file found in this repository. We don't know where your gerrit is. Please manually create a remote named gerrit and try again.  
+  _此时只能手动重命名远端`$ git remote rename origin gerrit`_
+ - 安装commit-msg hook
+- 若跳过此部，在后面第一次运行git review时`git review --setup`仍然会被自动运行一次，但是**在clone之后紧接着运行一次**是推荐的最佳实践
+7. 创建一个branch，名字格式为 FAB-XXXX （issue序号）  
       ```
       $ git checkout -b FAB-XXXX
       ```
-7. 重命名远端为gerrit: `$ git remote rename origin gerrit`
-      *否则在git review时会提示:*
-      > No '.gitreview' file found in this repository. We don't know where your gerrit is. Please manually create a remote named gerrit and try again.
 8. 正式干活了，修复issue
 9. 提交 ：`$git commit -a -s`
    *-s 选项不能漏，因为是帮你在commit message中自动生成sign off签名的*
 10. git会进入你设置的文本编辑器里编辑commit message
-    message推荐以这种格式编写
+    message推荐以这种格式编写,这也是杨保华的《区块链原理折》书中的格式
 
-      > <标题>  
-      > This fix #FAB-XXXX  
+      > [FAB-XXXX] <标题>  
+      > This fixes #FAB-XXXX  
       > <内容>
 
 11. `$ git rebase master` 
