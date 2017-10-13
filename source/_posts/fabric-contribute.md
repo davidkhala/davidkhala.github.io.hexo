@@ -61,18 +61,15 @@ tags:
 9. 提交 ：`$git commit -a -s`
    *-s 选项不能漏，因为是帮你在commit message中自动生成sign off签名的*
 10. git会进入你设置的文本编辑器里编辑commit message
-    message推荐以这种格式编写,这也是杨保华的《区块链原理折》书中的格式
+    message推荐以这种格式编写,这也是杨保华的《区块链原理、设计与应用》书中的格式
 
       > [FAB-XXXX] <标题>  
       > This fixes #FAB-XXXX  
       > <内容>
 
-11. `$ git rebase master` 
-       *可能是为了生成channge-id*
-12. 推出送申： `$ git review`  
+11. 推出送申： `$ git review`  
     *gerrit不用 push作为推出*
 
-    
 
 
 
