@@ -64,7 +64,7 @@ tags:
 10. git会进入你设置的文本编辑器里编辑commit message
     message推荐以这种格式编写,这也是杨保华的《区块链原理、设计与应用》书中的格式
 
-      > [FAB-XXXX] <标题>  
+      > [FAB-XXXX] <标题，本行不能超过55字符>  
       > This fixes #FAB-XXXX  
       > <内容>
 
