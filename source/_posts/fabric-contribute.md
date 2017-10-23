@@ -25,7 +25,7 @@ tags:
 代码是为了修复jira上提出的issue的，如果是新功能，也要创造一个新issue去‘修复’  
 记下我们要修复的问题的序号，比如FAB-XXXX，我们后面会用到
 
-## 获取代码
+## 第一次提交流程
 1. 进入https://gerrit.hyperledger.org/，并登陆你的LFID  
     *登陆入口在右上方，Search按钮下面有个‘Sign in’*  
 2. 查看项目列表，找到对应项目，这里以 lf-sandbox 项目为例子  
@@ -70,6 +70,18 @@ tags:
 
 11. 推出送申： `$ git review`  
     *gerrit不用 push作为推出*
+
+## 代码评审和修改
+提交成功之后，可以去gerrit。hyperledger.org/r/上查看自己最新提交的patchSet信息
+1. 添加审阅者Add Reviewer
+一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，核心机制维护Yacov Manevich  
+当然最有话语权的还是你所提交的目标仓库的维护者，务必是要邀请他加入审阅的  
+- 审阅者列表在change页的中间位置  
+
+如果评审没有通过，即有Reviewer给你的提交评论并扣分了，则需要做进一步的修正
+
+>修正过程跟第一次提交类似，唯一的不同是提交的时候不再使用$ git commit -a -s 而是`$ git commit -a --amend`
+
 
 
 
