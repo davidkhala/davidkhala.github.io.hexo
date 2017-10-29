@@ -1,5 +1,5 @@
 ---
-title: 为fabric-node-sdk的jobbuilder格式限制
+title: fabric-node-sdk Jobbuilder的一些格式限制
 date: 2017-10-26 09:40:58
 tags:
  - 区块链
