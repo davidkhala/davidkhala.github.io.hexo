@@ -5,7 +5,7 @@ tags:
  - 区块链
  - hyperledger
  - fabric
- - git
+ - fabric-node-sdk
 ---
 
 最近我提交了一个patch，遭到了Hyperledger Jobbuilder的反复'拒绝'。在此想分享一下拒绝原因

@@ -5,7 +5,7 @@ tags:
     - 区块链
     - hyperledger
     - fabric
-    - git
+    - gerrit
 ---
 
 本文整理了刘文亮的指引，仅作为对https://yeasy.gitbooks.io/blockchain_guide/hyperledger/contribute.html
@@ -81,10 +81,11 @@ tags:
 
 2. 修改提交
 如果评审没有通过，即有Reviewer给你的patchSet评论并扣分了，则需要做进一步的修正
- > 修正过程跟第一次提交类似，唯一的不同是提交的时候不再使用$ git commit -a -s 而是 
+ > 修正过程跟第一次提交类似，在当前的branch：FAB-XXXX里面修改好之后，提交时不再使用$ git commit -a -s 而是 
     ```
     $ git commit -a --amend
     ```
+ > 接着再进行git review就可以了
 
 3. 合并
 如果仓库维护者认可了你的patch，他会给你的最终patchSet加分并回复说你的change将会被合并到主分支上
