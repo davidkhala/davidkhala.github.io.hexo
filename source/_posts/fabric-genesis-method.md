@@ -5,6 +5,7 @@ tags:
 ---
 
 之前有段时间在研究在channel中动态增加组织的方法，突发奇想想试下如果不在orderer中加genesisblock的环境参数会如何
+<!--more-->
 于是就顺带研究了下标题中的问题
 
 引用官方文档：https://github.com/hyperledger/fabric/blob/master/sampleconfig/orderer.yaml

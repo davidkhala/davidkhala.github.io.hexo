@@ -9,8 +9,9 @@ tags:
 ---
 
 # 前情
-由于sourcetree最近几个版本更新给我个人感觉非常山寨，而且本来更新后还导致本身运行良好的host auth key chain不再好使了。因而我之前换上了smart git和Github destop app。
+由于sourcetree最近几个版本更新给我个人感觉非常山寨，而且本来更新后还导致本身运行良好的host auth key chain不再好使了。因此我之前换上了smart git和Github destop app。
 
+<!--more-->
 今天pull B神的项目然后用webstorm开，发现那一堆/.idea文件出现在了unstaged list里面，很是难受。  
 这两个git gui软件里我分别试了一下右键ignore，发现对于添加新ignore行非常不智能。况且这个本身不是我的项目，不想push自己的local ignore行上去。  
 因此就想到去改本机的gitignore_global文件。

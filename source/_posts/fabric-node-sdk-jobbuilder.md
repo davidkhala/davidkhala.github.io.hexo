@@ -10,6 +10,7 @@ tags:
 
 最近我提交了一个patch，遭到了Hyperledger Jobbuilder的反复'拒绝'。在此想分享一下拒绝原因
 
+<!--more-->
 JS doc
 -------------------
  * 单行不能超过150字符

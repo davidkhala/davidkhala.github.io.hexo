@@ -7,6 +7,8 @@ tags:
 今天整理过去的笔记时，发现之前我记录了一个关于android typeface字体设置的辟谣笔记
 这里分享出来
 
+<!--more-->
+
 http://www.cnblogs.com/bravestarrhu/archive/2012/07/17/2595598.html
 链接的文章里面有这么一段话：
 

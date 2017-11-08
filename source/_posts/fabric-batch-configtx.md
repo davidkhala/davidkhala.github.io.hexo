@@ -9,6 +9,8 @@ tags:
 今天一位朋友转发了这个文章  
 HyperLedger Fabric - HyperLedger Fabric 1.0的Transaction处理流程（分享自知乎网）https://zhuanlan.zhihu.com/p/27645101?utm_source=qq&utm_medium=social  
 其中关于orderer block打包的部分引起了我的兴趣
+
+<!--more-->
 >Orderer节点只是负责排序和打包工作，处理的结果是一个Batch的Transactions，也就是一个Block，这个Block的产生有两种情况，一种情况是Transaction很多，Block的大小达到了设定的大小，而另一种情况是Transaction很少，没有达到设定的大小，那么Orderer就会等，等到大小足够大或者超时时间。这些设置是在configtx.yaml中设定的。
 
 我去查阅了configtx可选的配置大全,但是依然有点疑惑  

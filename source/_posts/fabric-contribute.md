@@ -11,6 +11,7 @@ tags:
 本文整理了刘文亮的指引，仅作为对https://yeasy.gitbooks.io/blockchain_guide/hyperledger/contribute.html
 的补充说明，并一并感谢
 
+<!--more-->
 ## 安装环境
  - git
  - gerrit所需的组件：git-review，安装方法见 https://www.mediawiki.org/wiki/Gerrit/git-review

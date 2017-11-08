@@ -9,6 +9,7 @@ tags:
 
 latest标签，是docker image的默认标签
 
+<!--more-->
 官方文档：
 >To download a particular image, or set of images (i.e., a repository), use docker pull. If no tag is provided, Docker Engine uses the :latest tag as a default.   
 https://docs.docker.com/engine/reference/commandline/pull/#concurrent-downloads
