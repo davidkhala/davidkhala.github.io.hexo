@@ -8,6 +8,7 @@ tags:
 ``../src/test/java/org/hyperledger/fabric/sdkintegration/End2endAndBackAgainIT.java``
 和同目录下的``End2endIT``也足够进行开发工作了
 
+测试代码会在这里更新：https://github.com/davidkhala/delphi-fabric/tree/master/JavaSDKTest
 <!--more-->
 
 _____________________
@@ -31,7 +32,7 @@ _____________________
 ### User对象  
  - User对象是一个接口，其中需要实现的方法是各类getter，其中比较重要的除了name之外，还有``String MspId;``和``Enrollment enrollment;``  
  - ``Enrollment``对象依然是个接口，用来保存PrivateKey和证书``String cert``的，在使用User之前请务必将enrollment设置正确。
- - 对于由``cryptogen``生成的目录接口来说，PrivateKey可以对应``msp/keystore``下面的*_sk文件，证书对应``msp/signcerts``下面的证书文件
+ - 对于由``cryptogen``生成的目录结构来说，PrivateKey可以对应``msp/keystore``下面的*_sk文件，证书对应``msp/signcerts``下面的证书文件
  - 官方读取PrivateKey的方案:
     ```
         //通过sdk内置的Bouncy Castle库来导入的
