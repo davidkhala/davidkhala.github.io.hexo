@@ -14,3 +14,6 @@ tags:
  - 语句最后要以‘;’结尾
  - 不要使用fs.readFileSync(??这点有待商榷)
  - 不要遗留空代码行
+ - 自动化测试无法通过的语法包括：
+    - 使用解构赋值（destructuring assignment）语法，如const {username,mspid} = opts
+    - 使用箭头函数如()=>{}

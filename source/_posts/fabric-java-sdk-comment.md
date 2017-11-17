@@ -8,9 +8,10 @@ tags:
 ``../src/test/java/org/hyperledger/fabric/sdkintegration/End2endAndBackAgainIT.java``
 和同目录下的``End2endIT``也足够进行开发工作了
 
-测试代码会在这里更新：https://github.com/davidkhala/delphi-fabric/tree/master/JavaSDKTest
+测试代码会在这里更新：https://github.com/davidkhala/delphi-fabric/tree/master/java
 <!--more-->
 
+- 目前java-sdk的tags最新只到1.0.1，远远赶不上node-sdk的进度，因此在使用时注意检查fabric容器的版本与sdk的版本是否一致
 _____________________
 ### name属性：
 相对于node-sdk里面的对象，很多java-sdk的对象，包括Peer，EventHub对象，都多了一个会进行检查的name属性，根据我观察，除了作为一个错误日志里的标签之外，没有别的用途
