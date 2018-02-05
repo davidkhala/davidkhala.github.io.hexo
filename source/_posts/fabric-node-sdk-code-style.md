@@ -17,3 +17,4 @@ tags:
  - 自动化测试无法通过的语法包括：
     - 使用解构赋值（destructuring assignment）语法，如const {username,mspid} = opts
     - 使用箭头函数如()=>{}
+    - 使用模板字符串（Template literals）,如`Error :${error}`
