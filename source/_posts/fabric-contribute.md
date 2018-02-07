@@ -65,15 +65,27 @@ tags:
 10. git会进入你设置的文本编辑器里编辑commit message
     message推荐以这种格式编写,这也是杨保华的《区块链原理、设计与应用》书中的格式
 
-      > [FAB-XXXX] <标题，本行不能超过55字符>  
+      > [FAB-XXXX] <标题,官方文档说本行不能超过72个字符，实测不能超过55个字符>  
+      > <空行>
       > This fixes #FAB-XXXX  
-      > <内容>
+      > <内容：每行不超过80字符，其中应该包括
+      >     - 你的提交做了什么？
+      >     - 为何选用这种方式去进行改动
+      >     - 为何这种改动能够成功，比如提交你成功的代码测试结果
+      >     
+      > >
 
 11. 推出送申： `$ git review`  
     *gerrit不用 push作为推出*
 
 ## 代码评审和修改
-提交成功之后，可以去gerrit。hyperledger.org/r/上查看自己最新提交的patchSet信息
+提交成功之后，可以去gerrit.hyperledger.org/r/上查看自己最新提交的patchSet信息
+0. 检查你的变更请求Change Request(CR)是否通过了Hyperledger JobBuilder检测
+为了确保代码的稳定性，官方基于Jenkins设立了一套持续集成（CI）流程。这套流程会在每次patchSet被推出之后，尝试在各种平台上运行测试。
+贡献者有责任去保证自己的代码能供通过这些测试
+测试通过后JobBuilder会自动给你的变更投票 +1，否则则会投 -1
+**注意，有的时候CI流程会因为莫名的原因而出错，所以你需要去看log来确保不是自己的锅。如果确实跟你无关，你可以通过在你的CR页面上回复'reverify'来重启CI流程**
+关于CI流程的更细节信息详见：https://github.com/hyperledger/ci-management/blob/master/docs/fabric_ci_process.md
 1. 添加审阅者Add Reviewer
 一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，核心机制维护Yacov Manevich  
 当然最有话语权的还是你所提交的目标仓库的维护者，务必是要邀请他加入审阅的  
