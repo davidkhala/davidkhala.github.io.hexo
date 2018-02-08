@@ -46,7 +46,7 @@ tags:
     ```
 5. 选择一个父目录，执行刚才复制的clone命令，下载代码
 6. **更新** 重命名远端 `$ git remote rename origin gerrit`
-    在执行 `$ git review --setup`时，由于的确没有.gitreview文件，因此一定会出现_
+    如果没重命名，那么后面在执行 `$ git review --setup`时，由于的确没有.gitreview文件，因此一定会出现_
   > No '.gitreview' file found in this repository. We don't know where your gerrit is. Please manually create a remote named gerrit and try again.  
 6. **更新** 初始化gerrit：`$ git review --setup`  
  \--setup，代表只初始化仓库但不提交 _Just run the repo setup commands but don't submit anything_  
