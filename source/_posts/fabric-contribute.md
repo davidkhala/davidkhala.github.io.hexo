@@ -84,23 +84,25 @@ tags:
 为了确保代码的稳定性，官方基于Jenkins设立了一套持续集成（CI）流程。这套流程会在每次patchSet被推出之后，尝试在各种平台上运行测试。
 贡献者有责任去保证自己的代码能供通过这些测试
 测试通过后JobBuilder会自动给你的变更投票 +1，否则则会投 -1
-**注意，有的时候CI流程会因为莫名的原因而出错，所以你需要去看log来确保不是自己的锅。如果确实跟你无关，你可以通过在你的CR页面上回复'reverify'来重启CI流程**
- - 关于CI流程的更细节信息详见：https://github.com/hyperledger/ci-management/blob/master/docs/fabric_ci_process.md
-
-* 号外:@rameshthoomu 提供了专属node-sdk的更原子化的reverify关键字，回复其中一个可以单独重启某个CI子过程。
-这样只需要重启错误的那一两个子过程，而不是重启整个CI，来加速验证迭代
-    * (Triggers node8 jobs on x and z platforms)
-    ``reverify-node8x``,``reverify-node8z``
-    * (Triggers node6 jobs on x and z platforms)
-    ``reverify-node6x``,``reverify-node6z``
+    **注意，有的时候CI流程会因为莫名的原因而出错，所以你需要去看log来确保不是自己的锅。**
+    如果确实跟你无关，你可以通过在你的CR页面上回复'reverify'来重启CI流程。
+    
+    关于CI流程的更细节信息详见
+    - https://github.com/hyperledger/ci-management/blob/master/docs/fabric_ci_process.md
+    
+    **号外**: @rameshthoomu 提供了专属node-sdk的更原子化的reverify关键字，回复其中一个可以单独重启某个CI子过程。
+    这样只需要重启错误的那一两个子过程，而不是重启整个CI，来加速验证迭代
+        (Triggers node8 jobs on x and z platforms)：``reverify-node8x``,``reverify-node8z``
+        (Triggers node6 jobs on x and z platforms)：``reverify-node6x``,``reverify-node6z``
 
 1. 添加审阅者Add Reviewer
 一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，核心机制维护Yacov Manevich  
 当然最有话语权的还是你所提交的目标仓库的维护者，务必是要邀请他加入审阅的，只有维护者才有权限对你的patch进行merge
-- 如何找到维护者：以node-sdk为例 维护者列表在：https://github.com/hyperledger/fabric-sdk-node/blob/master/MAINTAINERS.md
-- 如何快速联系维护者：在rocketChat的PR专属频道发布关于你变更的消息 #fabric-pr-review
+    - 如何找到维护者：以node-sdk为例 维护者列表在：
+    https://github.com/hyperledger/fabric-sdk-node/blob/master/MAINTAINERS.md
+    - 如何快速联系维护者：在rocketChat的PR专属频道发布关于你变更的消息 #fabric-pr-review
 
-**审阅者列表在change页的中间位置**
+    **审阅者列表在change页的中间位置**
 
 2. 修改提交
 如果评审没有通过，即有Reviewer给你的patchSet评论并扣分了，则需要做进一步的修正
