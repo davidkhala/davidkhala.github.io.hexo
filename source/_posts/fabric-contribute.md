@@ -91,9 +91,12 @@ tags:
     - https://github.com/hyperledger/ci-management/blob/master/docs/fabric_ci_process.md
     
     **号外**: @rameshthoomu 提供了专属node-sdk的更原子化的reverify关键字，回复其中一个可以单独重启某个CI子过程。
-    这样只需要重启错误的那一两个子过程，而不是重启整个CI，来加速验证迭代
+    这样只需要重启错误的那一两个子过程，而不是重启整个CI，来加速验证迭代  
+    此外，现在node6版本的平台测试也已经不再是默认包含的了
         (Triggers node8 jobs on x and z platforms)：``reverify-node8x``,``reverify-node8z``
-        (Triggers node6 jobs on x and z platforms)：``reverify-node6x``,``reverify-node6z``
+        x: x86_64
+        z: s390x    
+    
 
 1. 添加审阅者Add Reviewer
 一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，核心机制维护Yacov Manevich  
