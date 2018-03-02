@@ -118,6 +118,29 @@ tags:
 3. 合并
 如果仓库维护者认可了你的patch，他会给你的最终patchSet加分并回复说你的change将会被合并到主分支上
 
+## 与别人协作
+
+感谢Dave Enyeart的提醒
+ > Simply reach out to the initial contributor either via rocket.chat or gerrit review or jira to coordinate, and then you can Checkout the latest patch under gerrit Download link, make your updates, `git commit -s --amend` to update and sign the commit, then push as normal.
+
+1. 出于礼貌，先跟原作者通过rocketChat，gerrit review或者jira issue的方式联系沟通，表达你愿意在他的CR做进一步修改的意愿。
+2. 在patch页面的右上角，账户名字的左下方，你能看到一个名为 Download 的下拉菜单，复制运行它所提供的Checkout命令，如:  
+ ```
+ $ git fetch https://davidkhala@gerrit.hyperledger.org/r/a/fabric-sdk-node refs/changes/09/11609/2 && git checkout FETCH_HEAD
+ ```
+ 运行后，branch就会下载到你本机上
+3. 下载后，当前的仓库会处于一个 detached head上，为了方便管理，应该在这个head上创建一个branch（同上）
+ ```
+ $ git checkout -b FAB-XXXX
+ ```
+4. 在branch FAB-XXXX上进行修改
+5. 提交时使用修改提交模式
+ ```
+    $ git commit -a --amend
+ ```
+ 加入自己的sign-off 信息（这是我是手打的，暂时还不知道怎么在最后一行自动生成）
+6. 推出方式同上 $ git review
+
 
 
 
