@@ -60,10 +60,10 @@ tags:
       $ git checkout -b FAB-XXXX
       ```
 8. 正式干活了，修复issue
-9. 提交 ：`$git commit -a -s`
-   *-s 选项不能漏，因为是帮你在commit message中自动生成sign off签名的*
+9. 提交 ：`$ git commit -a -s`
+   *-s 选项是用于在commit message中自动生成sign off签名的*
 10. git会进入你设置的文本编辑器里编辑commit message
-    message推荐以这种格式编写,这也是杨保华的《区块链原理、设计与应用》书中的格式
+    message推荐以这种格式编写
 
       > [FAB-XXXX] <标题,官方文档说本行不能超过72个字符，实测不能超过55个字符>  
       > <空行>
@@ -92,14 +92,13 @@ tags:
     
     **号外**: @rameshthoomu 提供了专属node-sdk的更原子化的reverify关键字，回复其中一个可以单独重启某个CI子过程。
     这样只需要重启错误的那一两个子过程，而不是重启整个CI，来加速验证迭代  
+    如：在x86_64上的用``reverify-node8x``,在s390x上的用``reverify-node8z``
     此外，现在node6版本的平台测试也已经不再是默认包含的了
-        (Triggers node8 jobs on x and z platforms)：``reverify-node8x``,``reverify-node8z``
-        x: x86_64
-        z: s390x    
+        
     
 
 1. 添加审阅者Add Reviewer
-一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，核心机制维护Yacov Manevich  
+一般都是添加一些活跃并具有影响力的大拿，比如BaohuaYang，Gari Signh，node-sdk的维护者Jim Zhang，Bret Harrison，核心机制维护Yacov Manevich  
 当然最有话语权的还是你所提交的目标仓库的维护者，务必是要邀请他加入审阅的，只有维护者才有权限对你的patch进行merge
     - 如何找到维护者：以node-sdk为例 维护者列表在：
     https://github.com/hyperledger/fabric-sdk-node/blob/master/MAINTAINERS.md
@@ -107,15 +106,20 @@ tags:
 
     **审阅者列表在change页的中间位置**
 
-2. 修改提交
+2. 更新issue状态
+Gari Singh指出
+ > once you submit a CR for review, please make sure you update the status of the JIRA to "In Review" and add the CR link in a comment    
+“在你的CR提交之后，请将jira上issue的状态变更为‘In Review’，并且添加一条包含该CR链接的评论”
+
+3. 修改提交
 如果评审没有通过，即有Reviewer给你的patchSet评论并扣分了，则需要做进一步的修正
- > 修正过程跟第一次提交类似，在当前的branch：FAB-XXXX里面修改好之后，提交时不再使用$ git commit -a -s 而是 
+ > 修正过程跟第一次提交类似，在当前的branch：FAB-XXXX里面修改好之后，使用如下命令修改提交 
     ```
     $ git commit -a --amend
     ```
  > 接着再进行git review就可以了
 
-3. 合并
+4. 合并
 如果仓库维护者认可了你的patch，他会给你的最终patchSet加分并回复说你的change将会被合并到主分支上
 
 ## 与别人协作
@@ -136,9 +140,8 @@ tags:
 4. 在branch FAB-XXXX上进行修改
 5. 提交时使用修改提交模式
  ```
-    $ git commit -a --amend
+    $ git commit -a --amend -s
  ```
- 加入自己的sign-off 信息（这是我是手打的，暂时还不知道怎么在最后一行自动生成）
 6. 推出方式同上 $ git review
 
 
