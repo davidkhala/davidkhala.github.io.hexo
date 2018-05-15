@@ -45,16 +45,9 @@ tags:
     git clone https://<LFID>@gerrit.hyperledger.org/r/a/lf-sandbox && (cd lf-sandbox && curl -kLo `git rev-parse --git-dir`/hooks/commit-msg https://<LFID>@gerrit.hyperledger.org/r/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
     ```
 5. 选择一个父目录，执行刚才复制的clone命令，下载代码
-6. **更新** 重命名远端 `$ git remote rename origin gerrit`
+6. 重命名远端 `$ git remote rename origin gerrit`
     如果没重命名，那么后面在执行 `$ git review --setup`时，由于的确没有.gitreview文件，因此一定会出现_
   > No '.gitreview' file found in this repository. We don't know where your gerrit is. Please manually create a remote named gerrit and try again.  
-6. **更新** 初始化gerrit：`$ git review --setup`  
- \--setup，代表只初始化仓库但不提交 _Just run the repo setup commands but don't submit anything_  
- - 初始化时的工作包括（参见https://www.mediawiki.org/wiki/Gerrit/git-review#Setting_up_git-review）
-  > 测试远端仓库连通性，若失败，会要求输入一个gerrit用户名，输入LFID即可
-  >创建一个名为“gerrit”的远端并引向它 
-  >安装commit-msg hook
- - 若跳过此部，在后面第一次运行git review时`git review --setup`仍然会被自动运行一次，但是**在clone之后紧接着运行一次**是推荐的最佳实践
 7. 创建一个branch，名字格式为 FAB-XXXX （issue序号）  
       ```
       $ git checkout -b FAB-XXXX
