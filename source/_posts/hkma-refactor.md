@@ -7,8 +7,6 @@ tags:
 - ASTRI
 - 重构
 - 挖坑
-categories:
-- Refactor
 ---
 
 

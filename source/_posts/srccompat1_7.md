@@ -5,8 +5,6 @@ tags:
 - 排雷
 - Android
 - ASTRI
-categories:
-- Android
 ---
 问题描述：
 windows平台 android studio 2.3
