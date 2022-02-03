@@ -16,10 +16,9 @@
     "hexo-generator-archive": "latest",
     "hexo-generator-index": "latest",
     "hexo-generator-tag": "latest",
-    "hexo-pagination":"latest",
     "hexo-renderer-marked": "latest",
     "hexo-renderer-stylus": "latest",
-    "hexo-renderer-swig":"latest",
+    "hexo-renderer-swig": "latest",
     "hexo-server": "latest"
   }
 }
