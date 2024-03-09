@@ -7,20 +7,18 @@ title: davidliu技术分享
 subtitle:
 description:
 author: davidLiu
-language: zh-Hans
-timezone:
+timezone: Hongkong
 avatar: /avatar.jpeg
 since: 2016
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://davidkhala.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 social:
   GitHub: https://github.com/davidkhala
-  Twitter: https://twitter.com/davidkhala
   Weibo: http://weibo.com/davidkhala
 
 # Directory
@@ -29,7 +27,6 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 code_dir: downloads/code
-i18n_dir: :lang
 skip_render:
 
 # Writing

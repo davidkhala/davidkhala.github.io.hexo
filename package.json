@@ -21,7 +21,7 @@
     "hexo-generator-tag": "latest",
     "hexo-renderer-marked": "latest",
     "hexo-renderer-stylus": "latest",
-    "hexo-renderer-swig": "latest",
-    "hexo-server": "latest"
+    "hexo-server": "latest",
+    "hexo-theme-next": "latest"
   }
 }
