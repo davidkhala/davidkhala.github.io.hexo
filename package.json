@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "6.0.0"
+    "version": "7.1.1"
   },
   "scripts": {
-    "test": "npm run prepare; hexo server",
-    "deploy": "npm run prepare; hexo deploy",
+    "pretest": "npm run prepare",
+    "test": "hexo server",
+    "prestart": "npm run prepare",
+    "start": "hexo deploy",
     "lint": "hexo clean",
     "prepare": "hexo generate"
   },
